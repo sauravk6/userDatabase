@@ -1,0 +1,771 @@
+@import '_mixins'
+
+
+dib()
+	display inline-block
+	*display inline
+	zoom:1
+#main-content
+	.container
+		padding: 1em 0.5em;
+	max-width 61.25em
+	margin auto
+
+.listing-header
+	position relative
+	h1
+		margin 0
+		font-weight lighter
+		font-size: 1.5em;
+
+.listing-num-res
+	margin-left: 0.3em;
+	font-weight: normal;
+	color: #777;
+	font-size .9em
+	@media (max-width:50em)
+		display: block;
+		height: 0;
+		line-height: 2.4em;
+		margin: 0;
+
+.li-heading-wrap
+	@media (max-width:50em)
+		margin 0 0 2.3em
+
+/**********main listing****/
+
+.deal-listing
+	padding-left 16em
+	.container
+		padding: 1em .2em !important;
+	@media (max-width:50em)
+		padding 0
+
+.deals-search
+	padding-left 0
+	.deal-item
+		width 24%
+		@media (max-width:50em)
+			display block
+			width auto
+	
+.deals-list
+	font-size 0
+.deal-item
+	background white
+	width: 32%;
+	border 1px solid #eee
+	border-radius: 0.2em;
+	margin: 0 0 1% 1%;
+
+	@media (max-width:50em)
+		display block
+		width auto
+	transition border .2s, box-shadow .2s
+	&:hover
+		box-shadow 0 0 6px 0px #bbb;
+		border-color #ccc
+		.di-get_now
+			background lighten(primary-color, 10%)
+	a
+		display block
+		color #333
+		height 100%
+
+.di-wrap
+	padding: 0.5em .5em 1em;
+	height 100%
+	position relative
+	@media (max-width: 50em)
+		padding .5em
+
+body{
+	color: #000 !important;
+}
+
+.small-deals-list
+
+	@media (max-width:50em)
+		display block
+		width auto
+
+@media (max-width: 728px)
+	.di-details 
+		margin-left: 6em;
+
+.di-details	
+	h2 
+		font-size: 0.8em;
+		margin: 0.4em 0
+		height: 2.9em;
+		overflow: hidden;
+		color: #333;
+		@media(max-width:50em)
+			max-height: 4.5em;
+			height auto
+.di-img
+	height: 12em;
+	line-height: 11.6em;
+	text-align: center
+	overflow hidden
+	border-bottom: 1px solid #ccc;
+	@media (max-width: 50em)
+		float: left
+		height 7.225em
+		line-height @height
+		width: 6em
+		border none
+	img
+		vertical-align: middle
+		max-height 99%
+		max-width @max-height
+
+
+.di-mrp
+	color #999
+	font-size: 0.9em;
+	>span
+		text-decoration line-through
+
+.di-curr_p
+	font-size: 1.2em;
+	color: #b22;
+	margin-top: -0.2em;
+
+.di-store-img
+	width 40px
+	margin-top: -38px;
+	float right
+	height 40px
+	border-radius 100%
+	-webkit-transform-style: preserve-3d;
+	img
+		height 100%
+		width 100%
+		border-radius 100%
+		
+
+.di-drop
+	top: 10px;
+	font-family: 'Oswald','Open Sans';
+	font-size: 1em;
+	color: white;
+	background: #ED8711;
+	position: absolute;
+	right: 0;
+	padding: 0.2rem 0.4rem;
+	border-radius: 5px 0 0 5px;
+	box-shadow: 0px 1px 3px -1px rgba(0,0,0,0.4);
+	@media (max-width: 50em)
+		top: auto;
+		bottom: 5px;
+	img
+		height: 1.2em;
+		width: 1.2em;
+		margin: -3px 2px 0 0;
+/**************filter n shit****/
+
+.sidebar
+	width 15.5em
+	z-index 1
+	position relative
+	@media (max-width:50em)
+		opacity: 0
+		position: fixed;
+		background: #fff;
+		top: 150%;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width:100%;
+		z-index 100;
+		transition opacity .3s ease-in, top .3s ease-in
+	h2
+		text-align center
+		padding: 0;
+		margin: 0 0 .8em;
+		font-size: 1.3em;
+		display none
+		@media (max-width:50em)
+			display block
+		
+	.container
+		padding 1em 0 !important
+
+	&.modal-active	
+		overflow: auto;
+		top 0!important
+		opacity 1
+
+.sf-title
+	text-align: center;
+	padding: 0.6em 0;
+	background: #f1f1f1;
+	border: 1px solid #ccc;
+	text-transform: uppercase;
+	color: #666;
+
+.side-wrap
+	padding .8em .3em 
+	h3
+		font-weight: normal;
+		font-size: 1em;
+	
+.price-slider
+	margin 1em .5em
+
+.price-inputs{
+	padding: 1%;
+	font-size: 0;
+	margin: 18px 0 8px
+	input{
+		width: 65%;
+		padding: 0.7em 0.3em;
+		text-align: center;
+		border-radius .45em;
+		margin-left: 1px;
+		border 1px solid #ccc
+		font-size 1.1em
+	}
+
+	div{
+		text-align: right;
+		width: 50%;
+		font-size: 13px;
+		&:first-child{
+			text-align: left;
+		}
+	}
+}
+
+.tree{
+	padding-left:4%;
+	.dropdown-arrow{
+		dib();
+	}
+}
+
+.tree-start{
+	.dropdown-arrow{
+		dib();
+	}
+	>.tree{
+		padding-left 0
+	}
+}
+#sf-cat{
+	padding .8em 0
+}
+
+.sf-open
+	.dropdown-arrow
+		left: 0.4em;
+		top: 0.9em;
+		height: 10px;
+		border-width: 6px 4px 0;
+		border-color: #555 transparent transparent transparent;
+		border-style: solid;	
+
+
+.sf-selected+.tree .dropdown-arrow,.final-branch .dropdown-arrow,.dropdown-arrow{
+	position: absolute;
+	left: 0.4em;
+	width: 8px;
+	border-width: 4px 0 4px 6px;
+	border-color: transparent transparent transparent #555;
+	border-style: solid;
+	height: 7px;
+	top: 0.9em;
+}
+.final-branch
+	.sf-selected
+		.dropdown-arrow
+			display none
+.sf-selected{
+	&> a,&> a:hover{
+		font-weight: bold;
+	}
+}
+.side-wrap{
+	position: relative;
+	&.item-check{
+		position: relative;
+		label{
+			cursor: pointer;
+			display: block;
+			input{
+				vertical-align: middle;
+				margin-right: .3em;
+			}
+		}
+	}
+
+
+
+	li{
+		font-size: .9em;
+		color: #555;
+		
+		>ul{
+			display: none;
+			padding: 0 0 0 .7em;
+			padding: 0 0 0 .7rem;
+
+		}
+		
+		&{
+			a:hover{
+				color: white;
+			background: #50CCee;
+			}
+		}
+		a{
+			color:  #666;
+			padding: 0.5em 0.5em 0.5em 1.3em;
+			display: block;
+			transition none;			
+			margin: -0.2em 0;
+			position relative
+			font-size: .9em;
+		}
+	}	
+	.it-count{
+		margin-left: .5em;
+		color: #999;
+	}
+}
+.more-btn-wrapper
+	text-align center
+	
+
+.btn-see-more
+	text-align: center;
+	margin: 0.5em auto 3em;	
+	background: primary-color
+	color white!important
+	border 1px solid darken(@background,10%)
+	&:hover
+		background lighten(@background,20%)
+	&:active
+		background darken(@background,10%)
+	&:after{
+		display: none
+	}
+/****************drop down********/
+.side-dropdown
+	position: relative;
+	margin:3px 0 0 4em;
+	padding: 0.4em 2em 0.4em .625em;
+	background: #fff;
+	border-radius 3px;
+	border: 1px solid #d5d5d5;
+	cursor: pointer;
+	outline: none;
+	color: #808080;
+	font-size .9em
+	@media (max-width:50em)
+			font-size 1em
+	&:before
+		content:"Sort By:"	
+		left: -4em;
+		position absolute
+		color: #555;
+
+	@media (min-width:50em)
+		width: 15em;
+		position: absolute;
+		right: 0;
+		top: -0.1em;
+
+	&:hover
+		box-shadow 0px 1px 6px 0px #bbb;
+
+	&.active
+		background: #0db2db;
+		box-shadow none;
+		border-bottom: none;
+		color: white;
+		.dropdown
+			visibility:visible;
+			pointer-events: auto;
+
+
+	&:after
+		content: "";
+		width: 0;
+		height: 0;
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		margin-top: -3px;
+		border-width: 5px 5px 0 5px;
+		border-style: solid;
+		border-color: #999 transparent;
+
+	&.active:after
+		border-color: #ffffff transparent;
+
+	.dropdown  
+		position: absolute;
+		z-index: 10;
+		top: 140%;
+		left: 0;
+		right: 0;
+		background: white;
+		border-radius: inherit;
+		border: 1px solid #d5d5d5;
+		box-shadow: 0 0 5px #d5d5d5;
+		font-weight: normal;
+		list-style: none;
+		visibility:hidden;
+		pointer-events: none;
+
+		&:after
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+			bottom: 100%;
+			right: 15px;
+			border-width: 0 7px 7px 7px;
+			border-style: solid;
+			border-color: #fff transparent;	
+
+		&:before
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+			bottom: 100%;
+			right: 12px;
+			border-width: 0 10px 10px 10px;
+			border-style: solid;
+			border-color: #d5d5d5 transparent;	
+
+		li
+			a
+				display: block;
+				padding: 0.6em;
+				text-decoration: none;
+				color: #808080;
+				border-bottom: 1px solid #e6e8ea;
+
+			&:first-of-type a
+				border-radius: 3px 3px 0 0;
+
+			&:last-of-type a
+				border-radius: 0 0 3px 3px;
+				border: none;
+
+			&:hover a
+				color: white!important;
+				background: #0db2db;
+/*********************buttons**********/
+
+.btn-modify
+	background: #0db2db
+	border 1px solid darken(@background,10%)
+	margin 0 auto 1em
+	&:after
+		background-position -159px -362px 
+	&:hover
+		background lighten(@background,20%)
+	&:active
+		background darken(@background,10%)
+	display none	
+	@media (max-width:50em)
+		display block
+
+
+// /**************nouislider*************/
+// .noUi-target,
+// .noUi-target * {
+// 	-webkit-touch-callout: none;
+// 	-webkit-user-select: none;
+// 	-ms-touch-action: none;
+// 	-ms-user-select: none;
+// 	-moz-user-select: none;
+// 	-moz-box-sizing: border-box;
+// 	box-sizing: border-box;
+// }
+// .noUi-target {
+// 	position: relative;
+// }
+// .noUi-base {
+// 	width: 100%;
+// 	height: 100%;
+// 	position: relative;
+// }
+// .noUi-origin {
+// 	position: absolute;
+// 	right: 0;
+// 	top: 0;
+// 	left: 0;
+// 	bottom: 0;
+// }
+// .noUi-handle {
+// 	position: relative;
+// 	z-index: 1;
+// }
+// .noUi-stacking .noUi-handle {
+// /* This class is applied to the lower origin when
+// its values is > 50%. */
+// z-index: 10;
+// }
+// .noUi-stacking + .noUi-origin {
+// /* Fix stacking order in IE7, which incorrectly
+// creates a new context for the origins. */
+// *z-index: -1;
+// }
+// .noUi-state-tap .noUi-origin {
+// 	-webkit-transition: left 0.3s, top 0.3s;
+// 	transition: left 0.3s, top 0.3s;
+// }
+// .noUi-state-drag * {
+// 	cursor: inherit !important;
+// }
+
+// /* Painting and performance;
+//  * Browsers can paint handles in their own layer.
+//  */
+//  .noUi-base {
+//  	-webkit-transform: translate3d(0,0,0);
+//  	transform: translate3d(0,0,0);
+//  }
+
+// /* Slider size and handle placement;
+// */
+// .noUi-horizontal {
+// 	height:0.6em;
+// }
+// .noUi-horizontal .noUi-handle {
+// 	width: 2em;
+// 	height: 2em;
+// 	left: -1.1em;
+// 	top: -0.75em;
+// }
+// // .noUi-vertical {
+// // 	width: 18px;
+// // }
+// // .noUi-vertical .noUi-handle {
+// // 	width: 28px;
+// // 	height: 34px;
+// // 	left: -6px;
+// // 	top: -17px;
+// // }
+
+// /* Styling;
+// */
+// .noUi-background {
+// 	background: #FAFAFA;
+// 	box-shadow: inset 0 1px 1px #f0f0f0;
+// }
+// .noUi-connect {
+// 	background: #0db2db;
+// 	box-shadow: inset 0 0 3px rgba(51,51,51,0.45);
+// 	-webkit-transition: background 450ms;
+// 	transition: background 450ms;
+// }
+// .noUi-origin {
+// 	border-radius: 2px;
+// }
+// .noUi-target {
+// 	border-radius: 4px;
+// 	border: 1px solid #D3D3D3;
+// 	box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+// }
+// .noUi-target.noUi-connect {
+// 	box-shadow: inset 0 0 3px rgba(51,51,51,0.45), 0 3px 6px -5px #BBB;
+// }
+
+// /* Handles and cursors;
+// */
+// .noUi-dragable {
+// 	cursor: w-resize;
+// }
+// .noUi-vertical .noUi-dragable {
+// 	cursor: n-resize;
+// }
+// .noUi-handle {
+// 	border: 1px solid #D9D9D9;
+// 	border-radius: 100%;
+// 	background: #FFF;
+// 	cursor: default;
+// 	box-shadow: inset 0 0 1px #FFF,	inset 0 1px 7px #EBEBEB,	0 3px 6px -3px #BBB;
+// }
+// .noUi-active {
+// 	box-shadow: inset 0 0 1px #FFF,	inset 0 1px 7px #DDD,	0 3px 6px -3px #BBB;
+// }
+
+// /* Handle stripes;
+// */
+// .noUi-handle:before,
+// .noUi-handle:after {
+// 	content: "";
+// 	display: block;
+// 	position: absolute;
+// 	height: 14px;
+// 	width: 1px;
+// 	background: #E8E7E6;
+// 	left: 0.8em;
+// 	top: 0.5em;
+// }
+// .noUi-handle:after {
+// 	left: 17px;
+// }
+// .noUi-vertical .noUi-handle:before,
+// .noUi-vertical .noUi-handle:after {
+// 	width: 14px;
+// 	height: 1px;
+// 	left: 6px;
+// 	top: 14px;
+// }
+// .noUi-vertical .noUi-handle:after {
+// 	top: 17px;
+// }
+
+// /* Disabled state;
+// */
+// [disabled].noUi-connect,
+// [disabled] .noUi-connect {
+// 	background: #B8B8B8;
+// }
+// [disabled] .noUi-handle {
+// 	cursor: not-allowed;
+// }
+
+
+/******************deal carousel ***********/
+.dc-li-img-wrap
+	height 140px;
+	width 160px
+	line-height 137px
+	text-align center
+.dc-li-img
+	max-height 95%;
+	max-width 95%
+	vertical-align middle
+.deal-carousel-li
+	width 160px
+	padding .5em 0.2em 1em 0.2em
+	border: 1px solid #eee;
+	border-radius: 0.2em;
+	transition: border 0.2s, box-shadow 0.2s;
+	&:hover
+		box-shadow: 0 0 6px 0 #bbb;
+		border-color: #ccc;
+	.di-prices
+		font-size: .8em;
+.dc-li-name
+	font-size: .7em;
+	height: 2.8em;
+	overflow: hidden;
+.dc-li-link
+	color #333
+.dc-title
+	margin: 0.7em 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.1em;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 0.3em;
+.deals-carousel	
+	border-bottom: 2px solid #ddd;
+	padding: 0 0 .5em 0;
+.dc-drop
+	bottom auto
+	// top: 75px;
+	background #DC320C
+	sup
+		font-size .8em
+.deals-carousel-wrap
+	margin 0 0 1.5em 0
+	
+/***************countdown***********/
+.is-countdown {
+	padding 0 0 5px 2%
+}
+.countdown-rtl {
+	direction: rtl;
+}
+.countdown-holding span {
+	color: #888;
+}
+.countdown-row {
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+}
+.countdown-show1 .countdown-section {
+	width: 98%;
+}
+.countdown-show2 .countdown-section {
+	width: 48%;
+}
+.countdown-show3 .countdown-section {
+	width: 32.5%;
+}
+.countdown-show4 .countdown-section {
+	width: 24.5%;
+}
+.countdown-show5 .countdown-section {
+	width: 19.5%;
+}
+.countdown-show6 .countdown-section {
+	width: 16.25%;
+}
+.countdown-show7 .countdown-section {
+	width: 14%;
+}
+.countdown-section 
+	display: block;
+	float: left;
+	font-size: 63%;
+	text-align: center;
+	padding 3px 0 7px
+	margin-right:-1px
+	color: #CB4B4B;
+	position relative
+	&:after
+		content:":";
+		position: absolute;
+		top:10px;
+		left:-1px
+	&:first-child:after
+		content:none
+
+.countdown-amount {
+    font-size: 200%;
+}
+.countdown-period {
+    display: block;
+    color: #555;
+}
+
+.form-group{
+	padding: 10px
+}
+label{
+	padding: 10px
+}
+
+.userCard{
+	    width: 80%;
+    margin: auto;
+    background: #fff;
+    margin-bottom: 3px;
+    padding: 13px;
+}
+
+.countdown-descr {
+	display: block;
+	width: 100%;
+}
+
+.countdown-title
+	font-size: .8em;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin-bottom: -4px;

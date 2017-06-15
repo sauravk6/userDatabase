@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hot Deals</title>
+  </head>
+  <body>
+                    
+    <div id="root"></div>
+   
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script type="text/javascript">
+      setTimeout(function () {
+        $('.cd-nav-li').click(function(e){        
+          e.preventDefault();            
+          if($(this).find('ul.cd-secondary-nav').hasClass('is-hidden'))
+            {
+              $('.cd-nav-li a').removeClass('selected');
+              $(this).find('a').eq(0).addClass('selected');
+              $(this).find('ul.cd-secondary-nav').removeClass('is-hidden');
+            }
+          else            
+            {
+              $('.cd-nav-li a').removeClass('selected');
+              $(this).find('a').eq(0).removeClass('selected');
+              $('.cd-secondary-nav').addClass('is-hidden');
+              $(this).find('ul.cd-secondary-nav').addClass('is-hidden');
+            }          
+        });
+      }, 2500);
+    </script>
+    <script type="text/javascript" src="bundle.js"></script>   
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Redux Async Example</title>
+  </head>
+  <body>
+                    
+    <div id="root" class=""></div>
+   
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script type="text/javascript">
+    setTimeout(function () {
+      $('.cd-nav-li').click(function(e){        
+            e.preventDefault();
+            
+            if($(this).find('ul.cd-secondary-nav').hasClass('is-hidden'))
+
+              {
+                $('.cd-nav-li a').removeClass('selected');
+                $(this).find('a').eq(0).addClass('selected');
+
+                $(this).find('ul.cd-secondary-nav').removeClass('is-hidden');
+              }
+            else
+            
+              {
+                 $('.cd-nav-li a').removeClass('selected');
+                $(this).find('a').eq(0).removeClass('selected');
+                $('.cd-secondary-nav').addClass('is-hidden');
+
+                $(this).find('ul.cd-secondary-nav').addClass('is-hidden');} 
+            console.log("clicked");
+            // if ( $('.cd-primary-nav').find('.cd-nav-li a:first').hasClass('selected'))
+            //  {
+            //     $(this).find('a').eq(0).addClass('selected');
+            //     $(this).find('ul.cd-secondary-nav').removeClass('is-hidden'); 
+            //  }
+            //  else{
+            //      $(this).find('a').eq(0).addClass('selected');
+            //     $(this).find('ul.cd-secondary-nav').addClass('is-hidden'); 
+            //  }
+                     
+          
+      });
+      }, 2500);
+
+
+    </script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` in this folder.
+      To create a production bundle, use `npm run build`.
+    -->
+  </body>
+</html>
